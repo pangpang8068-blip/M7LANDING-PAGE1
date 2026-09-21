@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>M777 | Entertainment Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(22,119,255,0.22), transparent 30%),
+        linear-gradient(180deg, #020817 0%, #041126 50%, #020817 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(2, 8, 23, 0.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #1b83ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+      color: #d9e5f7;
+    }
+
+    .nav-links a:hover {
+      color: #00cfff;
+    }
+
+    .lang {
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 12px;
+      color: #dbe9ff;
+      white-space: nowrap;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 55px 0 35px;
+    }
+
+    .hero-card {
+      min-height: 560px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      padding: 52px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 25px;
+
+      background:
+        linear-gradient(90deg, rgba(1,10,31,.94) 0%, rgba(2,15,46,.82) 50%, rgba(4,16,46,.7) 100%),
+        url("hero-tiger.png") right center / cover no-repeat;
+
+      border: 1px solid rgba(26,137,255,.25);
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,207,255,.4);
+      color: #dff9ff;
+      margin-bottom: 20px;
+      background: rgba(0,207,255,.08);
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 90px);
+      line-height: .93;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #1888ff;
+      text-shadow: 0 0 25px rgba(24,136,255,.4);
+    }
+
+    .hero-sub {
+      margin-top: 18px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .hero-copy {
+      color: #a7b8d4;
+      max-width: 600px;
+      margin: 14px 0 25px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 26px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 900;
+      background: linear-gradient(135deg,#1677ff,#00cfff);
+      box-shadow: 0 15px 35px rgba(22,119,255,.32);
+      transition: .25s;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0,207,255,.35);
+    }
+
+    .hero-note {
+      margin-top: 12px;
+      color: #7186a6;
+      font-size: 11px;
+    }
+
+    /* SECTION TITLES */
+    .section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .section-title small {
+      color: #00cfff;
+      letter-spacing: 2px;
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .section-title h2 {
+      margin-top: 8px;
+      font-size: 32px;
+    }
+
+    /* CATEGORY */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 330px;
+      border-radius: 22px;
+      overflow: hidden;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid rgba(255,255,255,.08);
+      background-size: cover;
+      background-position: center;
+      transition: .25s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0,207,255,.45);
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,7,22,.87));
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-content h3 {
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 9px;
+    }
+
+    .category-content p {
+      color: #d1def0;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .mini-button {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 9px;
+      border: 1px solid rgba(0,207,255,.45);
+      background: rgba(0,60,145,.35);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .sports-card {
+      background-image: url("sports-tiger.png");
+    }
+
+    .games-card {
+      background-image: url("games-tiger.png");
+    }
+
+    .live-card {
+      background-image: url("live-tiger.png");
+    }
+
+    .esports-card {
+      background-image: url("esports-tiger.png");
+    }
+
+    /* WELCOME */
+    .welcome-card {
+      border-radius: 26px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      min-height: 360px;
+      padding: 34px;
+      background:
+        linear-gradient(90deg, rgba(6,20,50,.95), rgba(4,25,62,.8)),
+        url("welcome-tiger.png") left center / cover no-repeat;
+      border: 1px solid rgba(28,132,255,.23);
+    }
+
+    .welcome-image-space {
+      min-height: 280px;
+    }
+
+    .welcome-content {
+      text-align: center;
+    }
+
+    .welcome-content small {
+      color: #00cfff;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .welcome-content h2 {
+      font-size: clamp(66px, 10vw, 115px);
+      color: #ffbf18;
+      line-height: .9;
+      margin: 8px 0;
+      text-shadow: 0 0 25px rgba(255,191,24,.25);
+    }
+
+    .welcome-content h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .reward-list {
+      display: grid;
+      gap: 8px;
+      max-width: 330px;
+      margin: 18px auto 22px;
+    }
+
+    .reward-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 11px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      font-size: 13px;
+    }
+
+    /* FEATURES */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 28px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      border: 1px solid #178cff;
+      box-shadow: 0 0 20px rgba(23,140,255,.16);
+    }
+
+    .feature h3 {
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: #9bacc4;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* FINAL */
+    .final-cta {
+      border-radius: 26px;
+      margin: 40px 0 45px;
+      padding: 48px 35px;
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(1,10,30,.95), rgba(4,28,70,.8)),
+        url("cta-tiger.png") right center / cover no-repeat;
+      border: 1px solid rgba(22,119,255,.22);
+    }
+
+    .final-cta h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .final-cta p {
+      color: #9fb2ce;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 30px 0 40px;
+      text-align: center;
+      color: #657a98;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* MOBILE */
+    @media(max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-card {
+        grid-template-columns: 1fr;
+        min-height: 620px;
+        padding: 30px 22px;
+        align-items: end;
+        background:
+          linear-gradient(180deg, rgba(1,10,30,.24), rgba(1,10,30,.96)),
+          url("hero-tiger.png") center top / cover no-repeat;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero-sub {
+        font-size: 18px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .welcome-card {
+        grid-template-columns: 1fr;
+        background:
+          linear-gradient(180deg, rgba(3,16,43,.5), rgba(3,16,43,.96)),
+          url("welcome-tiger.png") center top / cover no-repeat;
+      }
+
+      .welcome-image-space {
+        min-height: 200px;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .final-cta {
+        grid-template-columns: 1fr;
+        min-height: 440px;
+        align-items: end;
+        background:
+          linear-gradient(180deg, rgba(2,11,32,.25), rgba(2,11,32,.96)),
+          url("cta-tiger.png") center top / cover no-repeat;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .container {
+        width: 94%;
+      }
+
+      .hero {
+        padding-top: 25px;
+      }
+
+      .hero-card {
+        min-height: 590px;
+      }
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .hero-copy {
+        font-size: 13px;
+      }
+
+      .cta {
+        width: 100%;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: 360px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-content h2 {
+        font-size: 78px;
+      }
+
+      .welcome-content h3 {
+        font-size: 22px;
+      }
+
+      .final-cta h2 {
+        font-size: 32px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <div class="logo">
+      M<span>777</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#games">Games</a>
+      <a href="#sports">Sports</a>
+      <a href="#live">Live</a>
+      <a href="#esports">eSports</a>
+    </nav>
+
+    <div class="lang">
+      EN &nbsp;|&nbsp; 中文 &nbsp;|&nbsp; BM
+    </div>
+
+  </div>
+</header>
+
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-card">
+
+      <div>
+
+        <div class="hero-badge">
+          PREMIUM ENTERTAINMENT EXPERIENCE
+        </div>
+
+        <h1>
+          WELCOME TO
+          <br>
+          <span>M777</span>
+        </h1>
+
+        <div class="hero-sub">
+          SPORTS • LIVE • GAMES • ESPORTS
+        </div>
+
+        <p class="hero-copy">
+          Discover sports, live entertainment, featured games and more —
+          all together in one modern platform.
+        </p>
+
+        <a
+          class="cta"
+          href="https://www.m777play.com/?up=fbmarcus02">
+          EXPLORE NOW
+        </a>
+
+        <div class="hero-note">
+          For eligible users aged 18+ only
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATEGORIES -->
+  <section class="section" id="games">
+
+    <div class="section-title">
+      <small>EXPLORE</small>
+      <h2>Everything In One Place</h2>
+    </div>
+
+    <div class="category-grid">
+
+      <div class="category-card sports-card" id="sports">
+        <div class="category-content">
+          <h3>SPORTS ZONE</h3>
+          <p>Follow every match and stay close to the action.</p>
+
+          <a
+            class="mini-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
+            EXPLORE
+          </a>
+        </div>
+      </div>
+
+      <div class="category-card games-card">
+        <div class="category-content">
+          <h3>FEATURED GAMES</h3>
+          <p>Discover a wide range of entertainment choices.</p>
+
+          <a
+            class="mini-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
+            EXPLORE
+          </a>
+        </div>
+      </div>
+
+      <div class="category-card live-card" id="live">
+        <div class="category-content">
+          <h3>LIVE EXPERIENCE</h3>
+          <p>Enjoy an immersive live entertainment experience.</p>
+
+          <a
+            class="mini-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
+            EXPLORE
+          </a>
+        </div>
+      </div>
+
+      <div class="category-card esports-card" id="esports">
+        <div class="category-content">
+          <h3>ESPORTS ARENA</h3>
+          <p>Keep up with competitive gaming action.</p>
+
+          <a
+            class="mini-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
+            EXPLORE
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WELCOME -->
+  <section class="section">
+
+    <div class="welcome-card">
+
+      <div class="welcome-image-space"></div>
+
+      <div class="welcome-content">
+
+        <small>
+          NEW MEMBER WELCOME
+        </small>
+
+        <h2>
+          120%
+        </h2>
+
+        <h3>
+          WELCOME REWARD
+        </h3>
+
+        <div class="reward-list">
+
+          <div class="reward-row">
+            <span>SLOT</span>
+            <strong>120%</strong>
+          </div>
+
+          <div class="reward-row">
+            <span>LIVE</span>
+            <strong>117%</strong>
+          </div>
+
+          <div class="reward-row">
+            <span>SPORTS</span>
+            <strong>100%</strong>
+          </div>
+
+        </div>
+
+        <a
+          class="cta"
+          href="https://www.m777play.com/?up=fbmarcus02">
+          JOIN NOW
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+  <section class="section">
+
+    <div class="section-title">
+      <small>WHY CHOOSE US</small>
+      <h2>Built For A Smooth Experience</h2>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>FAST PROCESSING</h3>
+        <p>Quick and smooth experience.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎧</div>
+        <h3>24/7 CUSTOMER SUPPORT</h3>
+        <p>We're here whenever you need us.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>SECURE PLATFORM</h3>
+        <p>Safe, reliable and protected.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎁</div>
+        <h3>MEMBER BENEFITS</h3>
+        <p>Exclusive perks for our members.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+
+    <div>
+      <h2>READY TO EXPLORE?</h2>
+
+      <p>
+        Discover the M777 entertainment experience today.
+      </p>
+
+      <a
+        class="cta"
+        href="https://www.m777play.com/?up=fbmarcus02">
+        REGISTER NOW
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+    18+ only. Please participate responsibly.
+    <br>
+    Terms & Conditions may apply.
+    <br><br>
+    © 2026 M777. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
