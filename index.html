@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>M777 | Entertainment Hub</title>
 
   <style>
@@ -19,9 +20,9 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(18, 104, 255, 0.22), transparent 30%),
-        linear-gradient(180deg, #020817 0%, #041426 48%, #020817 100%);
-      color: #fff;
+        radial-gradient(circle at top right, rgba(20, 117, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, #020817 0%, #06172d 50%, #020817 100%);
+      color: #ffffff;
       overflow-x: hidden;
     }
 
@@ -31,523 +32,415 @@
     }
 
     img {
-      width: 100%;
       display: block;
+      width: 100%;
     }
 
     .container {
-      width: min(1180px, 92%);
-      margin: auto;
+      width: min(1180px, 94%);
+      margin: 0 auto;
     }
 
     /* HEADER */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(2, 8, 23, 0.9);
+
+      background: rgba(2, 8, 23, 0.94);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     .nav {
       min-height: 68px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .logo {
-      font-size: 29px;
+      font-size: 28px;
       font-weight: 900;
+      letter-spacing: 1px;
     }
 
     .logo span {
-      color: #1684ff;
+      color: #1687ff;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      font-size: 13px;
-      color: #d8e5f8;
+    .top-button {
+      padding: 10px 16px;
+
+      border-radius: 12px;
+
+      background: linear-gradient(135deg, #1677ff, #00cfff);
+
+      font-size: 12px;
+      font-weight: 900;
+
+      box-shadow: 0 8px 24px rgba(22, 119, 255, 0.3);
     }
 
-    .lang-buttons {
-      display: flex;
-      gap: 6px;
+    /* GENERAL */
+
+    .section {
+      padding: 30px 0;
     }
 
-    .lang-buttons button {
-      background: rgba(255,255,255,.05);
-      color: #d7e8ff;
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 20px;
-      padding: 7px 10px;
-      cursor: pointer;
-      font-size: 11px;
-    }
-
-    .lang-buttons button:hover {
-      border-color: #1684ff;
-    }
-
-    /* HERO */
-    .hero {
-      padding: 30px 0 20px;
-    }
-
-    .hero-box {
-      position: relative;
+    .image-card {
       overflow: hidden;
-      border-radius: 26px;
-      border: 1px solid rgba(34,135,255,.2);
-      box-shadow: 0 25px 60px rgba(0,0,0,.35);
+
+      border-radius: 22px;
+
+      background: #06172d;
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.28);
     }
 
-    .hero-box img {
-      min-height: 320px;
+    .image-card img {
+      width: 100%;
+      height: auto;
       object-fit: cover;
     }
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
+    .button-area {
+      padding: 16px;
+
       display: flex;
-      align-items: flex-end;
-      padding: 34px;
-      background: linear-gradient(
-        90deg,
-        rgba(0,6,22,.68),
-        rgba(0,6,22,.08),
-        rgba(0,6,22,.05)
-      );
-    }
-
-    .hero-content {
-      max-width: 480px;
-    }
-
-    .hero-content h1 {
-      font-size: clamp(34px, 7vw, 68px);
-      line-height: .95;
-      margin-bottom: 12px;
-    }
-
-    .hero-content p {
-      color: #bdd0e8;
-      margin-bottom: 18px;
-      line-height: 1.6;
-      font-size: 13px;
-    }
-
-    .button {
-      display: inline-flex;
       justify-content: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5, 18, 43, 0.92),
+          rgba(3, 11, 28, 0.98)
+        );
+    }
+
+    .cta-button {
+      display: inline-flex;
       align-items: center;
-      background: linear-gradient(135deg, #1478ff, #00cfff);
+      justify-content: center;
+
+      min-width: 200px;
+
       padding: 14px 24px;
-      min-width: 185px;
-      border-radius: 14px;
+
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #1677ff,
+          #00cfff
+        );
+
       font-size: 13px;
       font-weight: 900;
-      box-shadow: 0 12px 28px rgba(15,126,255,.3);
-      transition: .25s;
+
+      box-shadow:
+        0 12px 28px rgba(22, 119, 255, 0.28);
+
+      transition: 0.25s ease;
     }
 
-    .button:hover {
+    .cta-button:hover {
       transform: translateY(-3px);
+
+      box-shadow:
+        0 16px 36px rgba(0, 207, 255, 0.32);
     }
 
-    /* SECTION */
-    .section {
-      padding: 38px 0;
+    /* HERO */
+
+    .hero {
+      padding: 28px 0 22px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 24px;
+    .hero .image-card {
+      border-radius: 26px;
     }
 
-    .section-title small {
-      color: #00cfff;
-      letter-spacing: 2px;
-      font-size: 10px;
-      font-weight: 900;
+    .hero img {
+      max-height: 520px;
+      object-fit: cover;
     }
 
-    .section-title h2 {
-      margin-top: 7px;
-      font-size: 30px;
+    /* CATEGORY GRID */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
     }
 
-    /* CARDS */
-    .card-grid {
+    .category-card {
+      overflow: hidden;
+
+      border-radius: 20px;
+
+      background: #06162d;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+      transition: 0.25s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(0, 207, 255, 0.35);
+    }
+
+    .category-card img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .category-card .button-area {
+      padding: 13px;
+    }
+
+    .category-card .cta-button {
+      width: 100%;
+      min-width: 0;
+
+      padding: 12px 14px;
+
+      font-size: 11px;
+    }
+
+    /* WELCOME */
+
+    .welcome img {
+      max-height: 430px;
+      object-fit: cover;
+    }
+
+    /* BENEFITS */
+
+    .benefit-section {
+      padding: 20px 0 35px;
+    }
+
+    .benefit-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
-    .card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      min-height: 320px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: #05142c;
-      transition: .25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(0,207,255,.4);
-    }
-
-    .card img {
-      height: 100%;
-      min-height: 320px;
-      object-fit: cover;
-    }
-
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: flex-end;
-      padding: 18px;
-      background: linear-gradient(
-        180deg,
-        transparent 40%,
-        rgba(0,5,18,.92)
-      );
-    }
-
-    .card-overlay h3 {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-
-    .card-overlay p {
-      font-size: 11px;
-      color: #c4d4e9;
-      margin-bottom: 11px;
-    }
-
-    .mini-btn {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 9px;
-      background: rgba(17,117,255,.75);
-      border: 1px solid rgba(0,207,255,.35);
-      font-size: 10px;
-      font-weight: 800;
-    }
-
-    /* WELCOME */
-    .welcome-box {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(34,135,255,.18);
-      box-shadow: 0 20px 50px rgba(0,0,0,.25);
-    }
-
-    .welcome-box img {
-      min-height: 300px;
-      object-fit: cover;
-    }
-
-    .welcome-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 35px;
-      background: linear-gradient(
-        90deg,
-        rgba(0,4,16,.08),
-        rgba(0,4,16,.42),
-        rgba(0,4,16,.78)
-      );
-    }
-
-    .welcome-content {
-      width: min(440px, 100%);
+    .benefit {
       text-align: center;
+
+      padding: 24px 15px;
+
+      border-radius: 17px;
+
+      background:
+        rgba(255, 255, 255, 0.045);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.07);
     }
 
-    .welcome-content small {
-      color: #00cfff;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .welcome-content h2 {
-      color: #ffc21c;
-      font-size: clamp(56px, 10vw, 96px);
-      line-height: .9;
-      margin: 10px 0;
-    }
-
-    .welcome-content h3 {
-      margin-bottom: 17px;
-      font-size: 24px;
-    }
-
-    .reward-list {
-      display: grid;
-      gap: 7px;
-      margin-bottom: 18px;
-    }
-
-    .reward-row {
-      display: flex;
-      justify-content: space-between;
-      background: rgba(0,0,0,.33);
-      border: 1px solid rgba(255,255,255,.09);
-      padding: 10px 13px;
-      border-radius: 10px;
-      font-size: 12px;
-    }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 13px;
-    }
-
-    .feature {
-      background: rgba(255,255,255,.045);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 16px;
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    .feature-icon {
+    .benefit-icon {
       font-size: 28px;
       margin-bottom: 10px;
     }
 
-    .feature h3 {
+    .benefit h3 {
       font-size: 13px;
       margin-bottom: 5px;
     }
 
-    .feature p {
-      color: #8fa4c0;
+    .benefit p {
       font-size: 11px;
       line-height: 1.5;
+      color: #92a7c4;
     }
 
-    /* CTA */
-    .cta-box {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      margin-bottom: 45px;
-      border: 1px solid rgba(34,135,255,.18);
-    }
+    /* FINAL CTA */
 
-    .cta-box img {
-      min-height: 270px;
+    .final img {
+      max-height: 430px;
       object-fit: cover;
     }
 
-    .cta-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      padding: 35px;
-      background: linear-gradient(
-        90deg,
-        rgba(0,5,20,.84),
-        rgba(0,5,20,.44),
-        rgba(0,5,20,.08)
-      );
-    }
-
-    .cta-content {
-      max-width: 450px;
-    }
-
-    .cta-content h2 {
-      font-size: 38px;
-      margin-bottom: 8px;
-    }
-
-    .cta-content p {
-      color: #a9bad1;
-      margin-bottom: 18px;
-      font-size: 13px;
-    }
+    /* FOOTER */
 
     footer {
-      border-top: 1px solid rgba(255,255,255,.06);
-      padding: 28px 0 35px;
+      margin-top: 35px;
+
+      padding: 28px 0 36px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.06);
+
       text-align: center;
-      color: #637a99;
+
+      color: #637b99;
+
       font-size: 10px;
       line-height: 1.8;
     }
 
-    /* MOBILE */
-    @media(max-width: 900px) {
-      .nav-links {
-        display: none;
+    /* TABLET */
+
+    @media (max-width: 900px) {
+
+      .category-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .card-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .benefit-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .welcome-overlay {
-        align-items: flex-end;
-        justify-content: center;
-        background: linear-gradient(
-          180deg,
-          rgba(0,4,16,.08),
-          rgba(0,4,16,.88)
-        );
-      }
-
-      .welcome-content {
-        width: 100%;
-      }
     }
 
-    @media(max-width: 560px) {
+    /* MOBILE */
+
+    @media (max-width: 560px) {
+
       .container {
         width: 94%;
       }
 
-      .hero-overlay {
-        align-items: flex-end;
-        padding: 20px;
-        background: linear-gradient(
-          180deg,
-          rgba(0,5,20,.06),
-          rgba(0,5,20,.94)
-        );
+      .nav {
+        min-height: 62px;
       }
 
-      .hero-box img {
-        min-height: 520px;
+      .logo {
+        font-size: 24px;
       }
 
-      .hero-content h1 {
-        font-size: 38px;
+      .top-button {
+        padding: 9px 13px;
+        font-size: 11px;
       }
 
-      .button {
-        width: 100%;
+      .hero {
+        padding-top: 18px;
       }
 
-      .card-grid {
+      .hero img {
+        max-height: none;
+      }
+
+      .category-grid {
         grid-template-columns: 1fr;
       }
 
-      .card {
-        min-height: 360px;
+      .category-card img {
+        aspect-ratio: auto;
+        max-height: 430px;
       }
 
-      .card img {
-        min-height: 360px;
+      .benefit-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .features {
-        grid-template-columns: 1fr 1fr;
+      .cta-button {
+        width: 100%;
       }
 
-      .welcome-box img {
-        min-height: 550px;
+      .button-area {
+        padding: 14px;
       }
 
-      .welcome-overlay {
-        padding: 20px;
-      }
-
-      .cta-box img {
-        min-height: 430px;
-      }
-
-      .cta-overlay {
-        align-items: flex-end;
-        padding: 22px;
-        background: linear-gradient(
-          180deg,
-          transparent,
-          rgba(0,5,20,.94)
-        );
-      }
-
-      .cta-content h2 {
-        font-size: 30px;
-      }
     }
+
   </style>
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
   <div class="container nav">
 
     <div class="logo">
       M<span>777</span>
     </div>
 
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#games">Games</a>
-      <a href="#welcome">Welcome</a>
-      <a href="#features">Benefits</a>
-    </nav>
-
-    <div class="lang-buttons">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('zh')">中文</button>
-      <button onclick="setLang('bm')">BM</button>
-    </div>
+    <a
+      class="top-button"
+      href="https://www.m777play.com/?up=fbmarcus02">
+      REGISTER
+    </a>
 
   </div>
+
 </header>
+
+
 
 <main class="container">
 
-  <!-- HERO -->
-  <section class="hero" id="home">
 
-    <div class="hero-box">
+  <!-- HERO IMAGE -->
 
-      <img src="hero-tiger.png" alt="M777 Tiger">
+  <section class="hero">
 
-      <div class="hero-overlay">
+    <div class="image-card">
 
-        <div class="hero-content">
+      <img
+        src="hero-tiger.png"
+        alt="M777 Welcome">
 
-          <h1 data-en="WELCOME TO M777"
-              data-zh="欢迎来到 M777"
-              data-bm="SELAMAT DATANG KE M777">
-            WELCOME TO M777
-          </h1>
+      <div class="button-area">
 
-          <p data-en="Sports • Live • Games • eSports — explore everything in one place."
-             data-zh="体育 • 直播 • 游戏 • 电竞 — 一站式探索精彩内容。"
-             data-bm="Sukan • Live • Permainan • eSukan — semuanya dalam satu platform.">
-            Sports • Live • Games • eSports — explore everything in one place.
-          </p>
+        <a
+          class="cta-button"
+          href="https://www.m777play.com/?up=fbmarcus02">
+          EXPLORE NOW
+        </a>
 
-          <a class="button"
-             href="https://www.m777play.com/?up=fbmarcus02">
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOUR CATEGORY IMAGES -->
+
+  <section class="section">
+
+    <div class="category-grid">
+
+
+      <!-- SPORTS -->
+
+      <div class="category-card">
+
+        <img
+          src="sports-tiger.png"
+          alt="Sports Zone">
+
+        <div class="button-area">
+
+          <a
+            class="cta-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
             EXPLORE NOW
           </a>
 
@@ -555,233 +448,229 @@
 
       </div>
 
-    </div>
-
-  </section>
 
 
-  <!-- CATEGORIES -->
-  <section class="section" id="games">
+      <!-- GAMES -->
 
-    <div class="section-title">
-      <small>EXPLORE</small>
-      <h2>Entertainment Categories</h2>
-    </div>
+      <div class="category-card">
 
-    <div class="card-grid">
+        <img
+          src="games-tiger.png"
+          alt="Featured Games">
 
-      <div class="card">
-        <img src="sports-tiger.png" alt="Sports">
-        <div class="card-overlay">
-          <div>
-            <h3>SPORTS ZONE</h3>
-            <p>Follow matches and sports action.</p>
-            <a class="mini-btn"
-               href="https://www.m777play.com/?up=fbmarcus02">
-              EXPLORE
-            </a>
-          </div>
-        </div>
-      </div>
+        <div class="button-area">
 
-      <div class="card">
-        <img src="games-tiger.png" alt="Games">
-        <div class="card-overlay">
-          <div>
-            <h3>FEATURED GAMES</h3>
-            <p>Discover entertainment selections.</p>
-            <a class="mini-btn"
-               href="https://www.m777play.com/?up=fbmarcus02">
-              EXPLORE
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="live-tiger.png" alt="Live">
-        <div class="card-overlay">
-          <div>
-            <h3>LIVE EXPERIENCE</h3>
-            <p>Explore interactive live entertainment.</p>
-            <a class="mini-btn"
-               href="https://www.m777play.com/?up=fbmarcus02">
-              EXPLORE
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="esports-tiger.png" alt="eSports">
-        <div class="card-overlay">
-          <div>
-            <h3>ESPORTS ARENA</h3>
-            <p>Competitive gaming action in one place.</p>
-            <a class="mini-btn"
-               href="https://www.m777play.com/?up=fbmarcus02">
-              EXPLORE
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WELCOME -->
-  <section class="section" id="welcome">
-
-    <div class="welcome-box">
-
-      <img src="welcome-tiger.png" alt="Welcome Reward">
-
-      <div class="welcome-overlay">
-
-        <div class="welcome-content">
-
-          <small>NEW MEMBER WELCOME</small>
-
-          <h2>120%</h2>
-
-          <h3>WELCOME REWARD</h3>
-
-          <div class="reward-list">
-
-            <div class="reward-row">
-              <span>SLOT</span>
-              <strong>120%</strong>
-            </div>
-
-            <div class="reward-row">
-              <span>LIVE</span>
-              <strong>117%</strong>
-            </div>
-
-            <div class="reward-row">
-              <span>SPORTS</span>
-              <strong>100%</strong>
-            </div>
-
-          </div>
-
-          <a class="button"
-             href="https://www.m777play.com/?up=fbmarcus02">
-            JOIN NOW
+          <a
+            class="cta-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
+            EXPLORE NOW
           </a>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
 
 
-  <!-- FEATURES -->
-  <section class="section" id="features">
+      <!-- LIVE -->
 
-    <div class="section-title">
-      <small>WHY CHOOSE US</small>
-      <h2>Smooth & Simple Experience</h2>
-    </div>
+      <div class="category-card">
 
-    <div class="features">
+        <img
+          src="live-tiger.png"
+          alt="Live Experience">
 
-      <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <h3>FAST PROCESSING</h3>
-        <p>Quick and smooth experience.</p>
-      </div>
+        <div class="button-area">
 
-      <div class="feature">
-        <div class="feature-icon">🎧</div>
-        <h3>24/7 SUPPORT</h3>
-        <p>Support whenever you need it.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">🔒</div>
-        <h3>SECURE PLATFORM</h3>
-        <p>Built with security in mind.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">🎁</div>
-        <h3>MEMBER BENEFITS</h3>
-        <p>Exclusive member experiences.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-  <section>
-
-    <div class="cta-box">
-
-      <img src="cta-tiger.png" alt="Join M777">
-
-      <div class="cta-overlay">
-
-        <div class="cta-content">
-
-          <h2>READY TO EXPLORE?</h2>
-
-          <p>
-            Discover the M777 entertainment experience today.
-          </p>
-
-          <a class="button"
-             href="https://www.m777play.com/?up=fbmarcus02">
-            REGISTER NOW
+          <a
+            class="cta-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
+            EXPLORE NOW
           </a>
 
         </div>
 
       </div>
 
+
+
+      <!-- ESPORTS -->
+
+      <div class="category-card">
+
+        <img
+          src="esports-tiger.png"
+          alt="Esports Arena">
+
+        <div class="button-area">
+
+          <a
+            class="cta-button"
+            href="https://www.m777play.com/?up=fbmarcus02">
+            EXPLORE NOW
+          </a>
+
+        </div>
+
+      </div>
+
+
     </div>
 
   </section>
+
+
+
+  <!-- WELCOME IMAGE -->
+
+  <section class="section welcome">
+
+    <div class="image-card">
+
+      <img
+        src="welcome-tiger.png"
+        alt="Welcome Reward">
+
+      <div class="button-area">
+
+        <a
+          class="cta-button"
+          href="https://www.m777play.com/?up=fbmarcus02">
+          JOIN NOW
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- BENEFITS -->
+
+  <section class="benefit-section">
+
+    <div class="benefit-grid">
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ⚡
+        </div>
+
+        <h3>
+          FAST PROCESSING
+        </h3>
+
+        <p>
+          Quick and smooth experience.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          🎧
+        </div>
+
+        <h3>
+          24/7 SUPPORT
+        </h3>
+
+        <p>
+          Support whenever you need it.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          🔒
+        </div>
+
+        <h3>
+          SECURE PLATFORM
+        </h3>
+
+        <p>
+          Built with security in mind.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          🎁
+        </div>
+
+        <h3>
+          MEMBER BENEFITS
+        </h3>
+
+        <p>
+          Exclusive member experiences.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FINAL CTA IMAGE -->
+
+  <section class="section final">
+
+    <div class="image-card">
+
+      <img
+        src="cta-tiger.png"
+        alt="Join M777">
+
+      <div class="button-area">
+
+        <a
+          class="cta-button"
+          href="https://www.m777play.com/?up=fbmarcus02">
+          REGISTER NOW
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
 
 </main>
 
+
+
 <footer>
+
   <div class="container">
-    18+ only. Please participate responsibly.<br>
-    Terms & Conditions may apply.<br><br>
+
+    18+ only. Please participate responsibly.
+    <br>
+
+    Terms & Conditions may apply.
+    <br><br>
+
     © 2026 M777. All rights reserved.
+
   </div>
+
 </footer>
 
-
-<script>
-  function setLang(lang) {
-
-    document.querySelectorAll("[data-en]").forEach(function(el) {
-
-      if (lang === "zh") {
-        el.innerHTML = el.getAttribute("data-zh");
-      }
-
-      else if (lang === "bm") {
-        el.innerHTML = el.getAttribute("data-bm");
-      }
-
-      else {
-        el.innerHTML = el.getAttribute("data-en");
-      }
-
-    });
-
-  }
-</script>
 
 </body>
 </html>
