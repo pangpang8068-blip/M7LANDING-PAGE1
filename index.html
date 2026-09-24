@@ -20,9 +20,10 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(20, 117, 255, 0.18), transparent 30%),
-        linear-gradient(180deg, #020817 0%, #06172d 50%, #020817 100%);
-      color: #ffffff;
+        radial-gradient(circle at 80% 0%, rgba(22,119,255,.22), transparent 28%),
+        radial-gradient(circle at 10% 30%, rgba(0,207,255,.08), transparent 25%),
+        linear-gradient(180deg, #020817 0%, #06162d 50%, #020817 100%);
+      color: white;
       overflow-x: hidden;
     }
 
@@ -31,13 +32,8 @@
       color: inherit;
     }
 
-    img {
-      display: block;
-      width: 100%;
-    }
-
     .container {
-      width: min(1180px, 94%);
+      width: min(1120px, 92%);
       margin: 0 auto;
     }
 
@@ -46,20 +42,18 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-
-      background: rgba(2, 8, 23, 0.94);
-      backdrop-filter: blur(14px);
-
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      z-index: 999;
+      background: rgba(2,8,23,.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
 
     .nav {
       min-height: 68px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
@@ -69,194 +63,300 @@
     }
 
     .logo span {
-      color: #1687ff;
+      color: #1677ff;
     }
 
-    .top-button {
-      padding: 10px 16px;
-
-      border-radius: 12px;
-
-      background: linear-gradient(135deg, #1677ff, #00cfff);
-
-      font-size: 12px;
-      font-weight: 900;
-
-      box-shadow: 0 8px 24px rgba(22, 119, 255, 0.3);
-    }
-
-    /* GENERAL */
-
-    .section {
-      padding: 30px 0;
-    }
-
-    .image-card {
-      overflow: hidden;
-
-      border-radius: 22px;
-
-      background: #06172d;
-
-      border: 1px solid rgba(255, 255, 255, 0.08);
-
-      box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.28);
-    }
-
-    .image-card img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .button-area {
-      padding: 16px;
-
-      display: flex;
-      justify-content: center;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(5, 18, 43, 0.92),
-          rgba(3, 11, 28, 0.98)
-        );
-    }
-
-    .cta-button {
+    .register-top {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
-      min-width: 200px;
-
-      padding: 14px 24px;
-
-      border-radius: 13px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #1677ff,
-          #00cfff
-        );
-
-      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: linear-gradient(135deg,#1677ff,#00cfff);
+      font-size: 12px;
       font-weight: 900;
-
-      box-shadow:
-        0 12px 28px rgba(22, 119, 255, 0.28);
-
-      transition: 0.25s ease;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-
-      box-shadow:
-        0 16px 36px rgba(0, 207, 255, 0.32);
+      box-shadow: 0 10px 28px rgba(22,119,255,.28);
     }
 
     /* HERO */
 
     .hero {
-      padding: 28px 0 22px;
+      padding: 70px 0 45px;
+      text-align: center;
     }
 
-    .hero .image-card {
-      border-radius: 26px;
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      margin-bottom: 18px;
+      border-radius: 30px;
+      border: 1px solid rgba(0,207,255,.30);
+      background: rgba(0,207,255,.06);
+      color: #00cfff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 2px;
     }
 
-    .hero img {
-      max-height: 520px;
-      object-fit: cover;
+    .hero h1 {
+      font-size: clamp(50px, 10vw, 90px);
+      line-height: .92;
+      font-weight: 900;
+      letter-spacing: -2px;
     }
 
-    /* CATEGORY GRID */
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+    .hero h1 span {
+      color: #1677ff;
+      text-shadow: 0 0 30px rgba(22,119,255,.45);
     }
 
-    .category-card {
-      overflow: hidden;
-
-      border-radius: 20px;
-
-      background: #06162d;
-
-      border: 1px solid rgba(255,255,255,0.08);
-
-      box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.25);
-
-      transition: 0.25s ease;
+    .hero-sub {
+      margin-top: 18px;
+      font-size: clamp(18px, 4vw, 26px);
+      font-weight: 800;
     }
 
-    .category-card:hover {
-      transform: translateY(-5px);
-
-      border-color:
-        rgba(0, 207, 255, 0.35);
+    .hero-copy {
+      max-width: 650px;
+      margin: 14px auto 28px;
+      color: #96a9c4;
+      font-size: 14px;
+      line-height: 1.8;
     }
 
-    .category-card img {
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
+    .main-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      padding: 16px 26px;
+      border-radius: 14px;
+      background: linear-gradient(135deg,#1677ff,#00cfff);
+      font-weight: 900;
+      font-size: 14px;
+      box-shadow: 0 15px 38px rgba(22,119,255,.30);
+      transition: .25s;
     }
 
-    .category-card .button-area {
-      padding: 13px;
+    .main-button:hover {
+      transform: translateY(-3px);
     }
 
-    .category-card .cta-button {
-      width: 100%;
-      min-width: 0;
-
-      padding: 12px 14px;
-
+    .hero-note {
+      margin-top: 12px;
+      color: #667a99;
       font-size: 11px;
     }
 
-    /* WELCOME */
+    /* OFFER */
 
-    .welcome img {
-      max-height: 430px;
-      object-fit: cover;
+    .offer-section {
+      padding: 10px 0 40px;
     }
 
-    /* BENEFITS */
-
-    .benefit-section {
-      padding: 20px 0 35px;
+    .offer-card {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 42px 20px;
+      border-radius: 26px;
+      background:
+        linear-gradient(135deg, rgba(22,119,255,.18), rgba(5,20,46,.92));
+      border: 1px solid rgba(22,119,255,.24);
+      box-shadow: 0 25px 70px rgba(0,0,0,.28);
     }
 
-    .benefit-grid {
+    .offer-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: #1677ff;
+      filter: blur(120px);
+      opacity: .18;
+      top: -120px;
+      right: -60px;
+    }
+
+    .offer-card small {
+      color: #00cfff;
+      letter-spacing: 2px;
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .offer-card h2 {
+      font-size: clamp(64px, 12vw, 110px);
+      line-height: .9;
+      color: #ffbf18;
+      margin: 12px 0 4px;
+      text-shadow: 0 0 25px rgba(255,191,24,.20);
+    }
+
+    .offer-card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .offer-card p {
+      color: #9fb1ca;
+      margin-bottom: 22px;
+      font-size: 13px;
+    }
+
+    /* SECTION */
+
+    .section {
+      padding: 44px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .section-title small {
+      color: #00cfff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      margin-top: 8px;
+      font-size: 30px;
+    }
+
+    /* CATEGORIES */
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
+    .card {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      padding: 24px 18px;
+      border-radius: 20px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,255,255,.07);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0,207,255,.35);
+      background:
+        linear-gradient(145deg, rgba(22,119,255,.12), rgba(255,255,255,.03));
+    }
+
+    .card-number {
+      font-size: 42px;
+      font-weight: 900;
+      color: rgba(255,255,255,.06);
+      position: absolute;
+      top: 12px;
+      right: 14px;
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #8fa2bd;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .mini-button {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 9px;
+      background: rgba(22,119,255,.18);
+      border: 1px solid rgba(0,207,255,.25);
+      color: #dff7ff;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    /* SPORTS */
+
+    .sports-box {
+      padding: 32px 20px;
+      border-radius: 24px;
+      background:
+        linear-gradient(145deg, rgba(5,20,46,.95), rgba(7,31,67,.88));
+      border: 1px solid rgba(22,119,255,.18);
+    }
+
+    .sports-box h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .sports-box > p {
+      text-align: center;
+      color: #93a6c0;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .sports-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .tag {
+      padding: 10px 13px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.07);
+      font-size: 12px;
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
     .benefit {
       text-align: center;
-
-      padding: 24px 15px;
-
+      padding: 26px 16px;
       border-radius: 17px;
-
-      background:
-        rgba(255, 255, 255, 0.045);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
     }
 
     .benefit-icon {
-      font-size: 28px;
-      margin-bottom: 10px;
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(22,119,255,.55);
+      font-size: 26px;
+      box-shadow: 0 0 20px rgba(22,119,255,.12);
     }
 
     .benefit h3 {
@@ -265,115 +365,95 @@
     }
 
     .benefit p {
+      color: #899cb8;
       font-size: 11px;
       line-height: 1.5;
-      color: #92a7c4;
     }
 
     /* FINAL CTA */
 
-    .final img {
-      max-height: 430px;
-      object-fit: cover;
+    .final {
+      margin: 40px 0 50px;
+      padding: 50px 25px;
+      border-radius: 26px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(22,119,255,.22), transparent 45%),
+        linear-gradient(145deg, rgba(7,28,64,.95), rgba(3,12,29,.98));
+      border: 1px solid rgba(22,119,255,.18);
+    }
+
+    .final h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .final p {
+      color: #9cafc8;
+      margin-bottom: 22px;
+      font-size: 13px;
     }
 
     /* FOOTER */
 
     footer {
-      margin-top: 35px;
-
-      padding: 28px 0 36px;
-
-      border-top:
-        1px solid rgba(255, 255, 255, 0.06);
-
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 28px 0 35px;
       text-align: center;
-
-      color: #637b99;
-
+      color: #627692;
       font-size: 10px;
       line-height: 1.8;
     }
 
-    /* TABLET */
-
-    @media (max-width: 900px) {
-
-      .category-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
+    @media(max-width:900px) {
+      .grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .benefit-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
+      .benefits {
+        grid-template-columns: repeat(2,1fr);
       }
-
     }
 
-    /* MOBILE */
-
-    @media (max-width: 560px) {
-
+    @media(max-width:560px) {
       .container {
         width: 94%;
       }
 
-      .nav {
-        min-height: 62px;
-      }
-
-      .logo {
-        font-size: 24px;
-      }
-
-      .top-button {
-        padding: 9px 13px;
-        font-size: 11px;
-      }
-
       .hero {
-        padding-top: 18px;
+        padding-top: 45px;
       }
 
-      .hero img {
-        max-height: none;
+      .hero h1 {
+        font-size: 48px;
       }
 
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .category-card img {
-        aspect-ratio: auto;
-        max-height: 430px;
-      }
-
-      .benefit-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .cta-button {
+      .main-button {
         width: 100%;
       }
 
-      .button-area {
-        padding: 14px;
+      .grid {
+        grid-template-columns: 1fr;
       }
 
-    }
+      .benefits {
+        grid-template-columns: 1fr 1fr;
+      }
 
+      .offer-card h2 {
+        font-size: 78px;
+      }
+
+      .final h2 {
+        font-size: 30px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
   <div class="container nav">
 
     <div class="logo">
@@ -381,278 +461,241 @@
     </div>
 
     <a
-      class="top-button"
+      class="register-top"
       href="https://www.m777play.com/?up=fbmarcus02">
       REGISTER
     </a>
 
   </div>
-
 </header>
-
 
 
 <main class="container">
 
-
-  <!-- HERO IMAGE -->
-
   <section class="hero">
 
-    <div class="image-card">
+    <div class="hero-badge">
+      PREMIUM ENTERTAINMENT EXPERIENCE
+    </div>
 
-      <img
-        src="hero-tiger.png"
-        alt="M777 Welcome">
+    <h1>
+      WELCOME TO<br>
+      <span>M777</span>
+    </h1>
 
-      <div class="button-area">
+    <div class="hero-sub">
+      SPORTS • LIVE • GAMES • ESPORTS
+    </div>
 
-        <a
-          class="cta-button"
-          href="https://www.m777play.com/?up=fbmarcus02">
-          EXPLORE NOW
-        </a>
+    <p class="hero-copy">
+      Explore sports, live entertainment, games and more —
+      all together in one modern platform.
+    </p>
 
-      </div>
+    <a
+      class="main-button"
+      href="https://www.m777play.com/?up=fbmarcus02">
+      EXPLORE NOW
+    </a>
 
+    <div class="hero-note">
+      For eligible users aged 18+ only
     </div>
 
   </section>
 
 
+  <section class="offer-section">
 
-  <!-- FOUR CATEGORY IMAGES -->
+    <div class="offer-card">
+
+      <small>NEW MEMBER WELCOME</small>
+
+      <h2>120%</h2>
+
+      <h3>WELCOME REWARD</h3>
+
+      <p>
+        100 GET 100 • Member Exclusive Experience
+      </p>
+
+      <a
+        class="main-button"
+        href="https://www.m777play.com/?up=fbmarcus02">
+        JOIN NOW
+      </a>
+
+    </div>
+
+  </section>
+
 
   <section class="section">
 
-    <div class="category-grid">
-
-
-      <!-- SPORTS -->
-
-      <div class="category-card">
-
-        <img
-          src="sports-tiger.png"
-          alt="Sports Zone">
-
-        <div class="button-area">
-
-          <a
-            class="cta-button"
-            href="https://www.m777play.com/?up=fbmarcus02">
-            EXPLORE NOW
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- GAMES -->
-
-      <div class="category-card">
-
-        <img
-          src="games-tiger.png"
-          alt="Featured Games">
-
-        <div class="button-area">
-
-          <a
-            class="cta-button"
-            href="https://www.m777play.com/?up=fbmarcus02">
-            EXPLORE NOW
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- LIVE -->
-
-      <div class="category-card">
-
-        <img
-          src="live-tiger.png"
-          alt="Live Experience">
-
-        <div class="button-area">
-
-          <a
-            class="cta-button"
-            href="https://www.m777play.com/?up=fbmarcus02">
-            EXPLORE NOW
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ESPORTS -->
-
-      <div class="category-card">
-
-        <img
-          src="esports-tiger.png"
-          alt="Esports Arena">
-
-        <div class="button-area">
-
-          <a
-            class="cta-button"
-            href="https://www.m777play.com/?up=fbmarcus02">
-            EXPLORE NOW
-          </a>
-
-        </div>
-
-      </div>
-
-
+    <div class="section-title">
+      <small>EXPLORE</small>
+      <h2>Everything In One Place</h2>
     </div>
 
-  </section>
+    <div class="grid">
 
+      <div class="card">
+        <div class="card-number">01</div>
+        <div class="icon">⚽</div>
 
+        <h3>SPORTS ZONE</h3>
 
-  <!-- WELCOME IMAGE -->
-
-  <section class="section welcome">
-
-    <div class="image-card">
-
-      <img
-        src="welcome-tiger.png"
-        alt="Welcome Reward">
-
-      <div class="button-area">
+        <p>
+          Follow popular sports and stay close to every match.
+        </p>
 
         <a
-          class="cta-button"
+          class="mini-button"
           href="https://www.m777play.com/?up=fbmarcus02">
-          JOIN NOW
+          EXPLORE
         </a>
-
       </div>
 
-    </div>
+      <div class="card">
+        <div class="card-number">02</div>
+        <div class="icon">🎮</div>
 
-  </section>
-
-
-
-  <!-- BENEFITS -->
-
-  <section class="benefit-section">
-
-    <div class="benefit-grid">
-
-      <div class="benefit">
-
-        <div class="benefit-icon">
-          ⚡
-        </div>
-
-        <h3>
-          FAST PROCESSING
-        </h3>
+        <h3>FEATURED GAMES</h3>
 
         <p>
-          Quick and smooth experience.
+          Discover a wide range of entertainment selections.
         </p>
-
-      </div>
-
-
-      <div class="benefit">
-
-        <div class="benefit-icon">
-          🎧
-        </div>
-
-        <h3>
-          24/7 SUPPORT
-        </h3>
-
-        <p>
-          Support whenever you need it.
-        </p>
-
-      </div>
-
-
-      <div class="benefit">
-
-        <div class="benefit-icon">
-          🔒
-        </div>
-
-        <h3>
-          SECURE PLATFORM
-        </h3>
-
-        <p>
-          Built with security in mind.
-        </p>
-
-      </div>
-
-
-      <div class="benefit">
-
-        <div class="benefit-icon">
-          🎁
-        </div>
-
-        <h3>
-          MEMBER BENEFITS
-        </h3>
-
-        <p>
-          Exclusive member experiences.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- FINAL CTA IMAGE -->
-
-  <section class="section final">
-
-    <div class="image-card">
-
-      <img
-        src="cta-tiger.png"
-        alt="Join M777">
-
-      <div class="button-area">
 
         <a
-          class="cta-button"
+          class="mini-button"
           href="https://www.m777play.com/?up=fbmarcus02">
-          REGISTER NOW
+          EXPLORE
         </a>
+      </div>
 
+      <div class="card">
+        <div class="card-number">03</div>
+        <div class="icon">🎥</div>
+
+        <h3>LIVE EXPERIENCE</h3>
+
+        <p>
+          Enjoy interactive live entertainment in one place.
+        </p>
+
+        <a
+          class="mini-button"
+          href="https://www.m777play.com/?up=fbmarcus02">
+          EXPLORE
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-number">04</div>
+        <div class="icon">🕹️</div>
+
+        <h3>ESPORTS ARENA</h3>
+
+        <p>
+          Keep up with competitive gaming action.
+        </p>
+
+        <a
+          class="mini-button"
+          href="https://www.m777play.com/?up=fbmarcus02">
+          EXPLORE
+        </a>
       </div>
 
     </div>
 
   </section>
 
+
+  <section class="section">
+
+    <div class="sports-box">
+
+      <h2>
+        ALL YOUR FAVORITE SPORTS
+      </h2>
+
+      <p>
+        Football • Basketball • Badminton • Tennis & More
+        <br>
+        Follow Every Match. Never Miss the Action.
+      </p>
+
+      <div class="sports-tags">
+        <div class="tag">⚽ Football</div>
+        <div class="tag">🏀 Basketball</div>
+        <div class="tag">🏸 Badminton</div>
+        <div class="tag">🎾 Tennis</div>
+        <div class="tag">🏎️ Racing</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="section-title">
+      <small>WHY CHOOSE US</small>
+      <h2>Built For A Smooth Experience</h2>
+    </div>
+
+    <div class="benefits">
+
+      <div class="benefit">
+        <div class="benefit-icon">⚡</div>
+        <h3>FAST PROCESSING</h3>
+        <p>Quick and smooth experience.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">🎧</div>
+        <h3>24/7 SUPPORT</h3>
+        <p>Support whenever you need it.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">🔒</div>
+        <h3>SECURE PLATFORM</h3>
+        <p>Built with security in mind.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">🎁</div>
+        <h3>MEMBER BENEFITS</h3>
+        <p>Exclusive member experiences.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="final">
+
+    <h2>
+      READY TO EXPLORE?
+    </h2>
+
+    <p>
+      Discover the M777 entertainment experience today.
+    </p>
+
+    <a
+      class="main-button"
+      href="https://www.m777play.com/?up=fbmarcus02">
+      REGISTER NOW
+    </a>
+
+  </section>
 
 </main>
-
 
 
 <footer>
@@ -670,7 +713,6 @@
   </div>
 
 </footer>
-
 
 </body>
 </html>
